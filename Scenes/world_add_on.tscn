@@ -14,7 +14,8 @@ textures = [[ExtResource("4_v0xrb")], [ExtResource("5_gbe4g")]]
 
 [node name="World_AddOn" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_54fqk")]
+[node name="VehicleBody3D" parent="." instance=ExtResource("1_54fqk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.0013, 17.8094, 407.469)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.108779, 0.573627, -0.811862, 0.132832, 0.800996, 0.583748, 0.985151, -0.17134, 0.0109358, 613.621, 139.579, 54.609)

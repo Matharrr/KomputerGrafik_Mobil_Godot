@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwp12pkq7qlxe"]
+
+[ext_resource type="Script" path="res://Scripts/menu_world_add_on.gd" id="1_1y875"]
+[ext_resource type="PackedScene" uid="uid://cx8gpcmg0vcmn" path="res://Scenes/Player.tscn" id="1_il6qm"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="2_rksko"]
+[ext_resource type="Resource" path="res://World_AddOn_Data/data.hterrain" id="3_uynhg"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="4_wcjhh"]
+[ext_resource type="Texture2D" uid="uid://crepyyxwopxes" path="res://assets/Ground037_2K-JPG/Ground037_2K-JPG_Color.jpg" id="5_26pgb"]
+[ext_resource type="Texture2D" uid="uid://bi5lgm6xqits1" path="res://assets/Ground037_2K-JPG/Ground037_2K-JPG_Roughness.jpg" id="6_kdsna"]
+[ext_resource type="Script" path="res://Scripts/Menu.gd" id="7_nhiw4"]
+
+[sub_resource type="Resource" id="Resource_m0mh0"]
+script = ExtResource("4_wcjhh")
+mode = 0
+textures = [[ExtResource("5_26pgb")], [ExtResource("6_kdsna")]]
+
+[node name="World_AddOn" type="Node3D"]
+script = ExtResource("1_1y875")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(-0.774945, 0, -0.632029, 0, 1, 0, 0.632029, 0, -0.774945, 258.526, 0, 259.991)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(-0.566406, 0.484409, -0.666732, 0, 0.809017, 0.587785, 0.824126, 0.332925, -0.458232, -44.544, 38.045, -26.869)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.108779, 0.573627, -0.811862, 0.132832, 0.800996, 0.583748, 0.985151, -0.171341, 0.0109355, 613.621, 139.579, 54.609)
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("2_rksko")
+_terrain_data = ExtResource("3_uynhg")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_m0mh0")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+
+[node name="Player" parent="." instance=ExtResource("1_il6qm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 272.703, 15.8405, 256.105)
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_nhiw4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -98.5
+offset_right = 127.0
+offset_bottom = 98.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MapOriginalButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Map Original
+"
+
+[node name="MapAddOnButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Map Add-On"
+
+[node name="QuitButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Quit
+"
+
+[connection signal="pressed" from="Menu/VBoxContainer/MapOriginalButton" to="Menu" method="_on_map_original_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/MapAddOnButton" to="Menu" method="_on_map_add_on_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/QuitButton" to="Menu" method="_on_quit_button_pressed"]

@@ -24,6 +24,7 @@ height = 0.5
 albedo_color = Color(0.374139, 0.374139, 0.374139, 1)
 
 [node name="Player" type="VehicleBody3D"]
+center_of_mass_mode = 1
 script = ExtResource("1_ly0p4")
 
 [node name="Kaca" type="CSGMesh3D" parent="."]
