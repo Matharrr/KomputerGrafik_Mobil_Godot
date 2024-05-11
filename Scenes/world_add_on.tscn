@@ -20,6 +20,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.0013, 17.8094, 407.469)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.108779, 0.573627, -0.811862, 0.132832, 0.800996, 0.583748, 0.985151, -0.17134, 0.0109358, 613.621, 139.579, 54.609)
+shadow_enabled = true
 
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("1_fcjlj")

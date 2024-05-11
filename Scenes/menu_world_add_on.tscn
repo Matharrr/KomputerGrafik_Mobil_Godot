@@ -36,6 +36,7 @@ text = "Muhamad Mathar Rizqi
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.108779, 0.573627, -0.811862, 0.132832, 0.800996, 0.583748, 0.985151, -0.171341, 0.0109355, 613.621, 139.579, 54.609)
+shadow_enabled = true
 
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("2_rksko")
