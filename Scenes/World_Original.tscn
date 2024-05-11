@@ -1,0 +1,131 @@
+[gd_scene load_steps=7 format=3 uid="uid://urvy043aaoaf"]
+
+[ext_resource type="PackedScene" uid="uid://cx8gpcmg0vcmn" path="res://Scenes/Player.tscn" id="1_x1r2p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hurb2"]
+albedo_color = Color(0.258824, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hawoy"]
+albedo_color = Color(1, 0.384314, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_agxpe"]
+albedo_color = Color(0.226707, 0.226707, 0.226707, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87sfl"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btxdk"]
+albedo_color = Color(0, 0.870588, 0, 1)
+
+[node name="World_Original" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0.353553, 0.866025, 0.353553, 0.612372, -0.5, 0.612372, -109, 34, 132)
+
+[node name="Player" parent="." instance=ExtResource("1_x1r2p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.096, 0)
+mass = 60.0
+center_of_mass_mode = 1
+
+[node name="Floor" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(200, 1, 200)
+material = SubResource("StandardMaterial3D_hurb2")
+
+[node name="Wall" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100)
+size = Vector3(200, 15, 1)
+
+[node name="Wall2" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100)
+size = Vector3(200, 15, 1)
+
+[node name="Wall3" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -100, 0, 4.37114e-06)
+size = Vector3(200, 15, 1)
+
+[node name="Wall4" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 100, 0, -4.37114e-06)
+size = Vector3(200, 15, 1)
+
+[node name="Pillar" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 0.820232, 0.572031, 0, -0.572031, 0.820232, 0, 0.283529, -45.8819)
+size = Vector3(1, 25, 1)
+
+[node name="Pillar2" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 19)
+size = Vector3(1, 25, 1)
+
+[node name="Pillar3" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, -41)
+size = Vector3(1, 25, 1)
+
+[node name="Pillar4" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -44.2598, 0, 14.2462)
+size = Vector3(1, 25, 1)
+
+[node name="Pillar5" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -59.2478, 0, 31.7208)
+size = Vector3(1, 25, 1)
+
+[node name="Pillar10" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.35269e-08, 0.99578, 0, 4.35269e-08, 1.90262e-15, 0.99578, 0.99578, 4.35269e-08, -4.35269e-08, -53.9535, 2.44617, -19.5826)
+size = Vector3(1, 25, 4.50977)
+
+[node name="Pillar6" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 7.50761, 0, 49.0331)
+size = Vector3(1, 25, 1)
+
+[node name="Pillar7" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -65.2598, 0, -69.7538)
+size = Vector3(1, 25, 1)
+
+[node name="Pillar8" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -80.2478, 0, -52.2792)
+size = Vector3(1, 25, 1)
+
+[node name="Pillar9" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -13.4924, 0, -34.9669)
+size = Vector3(1, 25, 1)
+
+[node name="Obstacle" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 0.897543, 0.440926, 0, -0.440926, 0.897543, 82.764, 9.031, 33.356)
+size = Vector3(20, 1, 54.4512)
+material = SubResource("StandardMaterial3D_hawoy")
+
+[node name="Obstacle5" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(0.462905, 0.0927885, 0.881538, 0.0353748, 0.99178, -0.122968, -0.885702, 0.0881067, 0.455818, 82.764, 0.276171, -69.8302)
+size = Vector3(20, 1, 54.4512)
+material = SubResource("StandardMaterial3D_hawoy")
+
+[node name="Obstacle4" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.37114e-08, -0.441506, 0.897258, 0, 0.897258, 0.441506, -1, 1.92988e-08, -3.92204e-08, -50.1191, 9.03094, 67.3762)
+size = Vector3(20, 1, 54.4512)
+material = SubResource("StandardMaterial3D_agxpe")
+
+[node name="Obstacle2" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 33.45, 20.8, 67.24)
+size = Vector3(20, 1, 118.721)
+material = SubResource("StandardMaterial3D_87sfl")
+
+[node name="Obstacle3" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 65.585, 29.3871, 77.6791)
+size = Vector3(20, 1, 54.4512)
+material = SubResource("StandardMaterial3D_btxdk")
+
+[node name="Obstacle6" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 0.331997, 0.943281, -4.12321e-08, -0.943281, 0.331997, -1.4512e-08, -12.8277, 18.0716, 14.6141)
+size = Vector3(34.0565, 1, 54.4512)
+material = SubResource("StandardMaterial3D_btxdk")
+
+[node name="Obstacle7" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 0.331997, 0.943281, -4.12321e-08, -0.943281, 0.331997, -1.4512e-08, -12.8277, 18.0716, 14.6141)
+size = Vector3(34.0565, 1, 54.4512)
+material = SubResource("StandardMaterial3D_btxdk")
+
+[node name="Obstacle" type="CSGBox3D" parent="Floor/Obstacle7"]
+transform = Transform3D(0.501219, 0.174189, 0.847607, -0.530846, 0.83545, 0.142217, -0.683361, -0.52123, 0.511211, 52.3352, -7.09408, 4.4225)
+size = Vector3(20, 1, 54.4512)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Floor"]
+radius = 20.0

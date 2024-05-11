@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://dt50ddj34srkb"]
+
+[ext_resource type="PackedScene" uid="uid://cx8gpcmg0vcmn" path="res://Scenes/Player.tscn" id="1_54fqk"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fcjlj"]
+[ext_resource type="Resource" path="res://World_AddOn_Data/data.hterrain" id="2_pnq2s"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_kldks"]
+[ext_resource type="Texture2D" uid="uid://crepyyxwopxes" path="res://assets/Ground037_2K-JPG/Ground037_2K-JPG_Color.jpg" id="4_v0xrb"]
+[ext_resource type="Texture2D" uid="uid://bi5lgm6xqits1" path="res://assets/Ground037_2K-JPG/Ground037_2K-JPG_Roughness.jpg" id="5_gbe4g"]
+
+[sub_resource type="Resource" id="Resource_m0mh0"]
+script = ExtResource("3_kldks")
+mode = 0
+textures = [[ExtResource("4_v0xrb")], [ExtResource("5_gbe4g")]]
+
+[node name="World_AddOn" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_54fqk")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.108779, 0.573627, -0.811862, 0.132832, 0.800996, 0.583748, 0.985151, -0.17134, 0.0109358, 613.621, 139.579, 54.609)
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_fcjlj")
+_terrain_data = ExtResource("2_pnq2s")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_m0mh0")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+
+[node name="Wall" type="CSGBox3D" parent="HTerrain"]
+transform = Transform3D(1.15713, 0, 0, 0, 0.992546, 0, 0, 0, 0.992546, 256.322, 29.8981, 0)
+size = Vector3(448.709, 74.4878, 1)
+
+[node name="Wall2" type="CSGBox3D" parent="HTerrain"]
+transform = Transform3D(1.15713, 0, 0, 0, 0.992546, 0, 0, 0, 0.992546, 256.322, 29.898, 512.64)
+use_collision = true
+size = Vector3(448.709, 74.4878, 1)
+
+[node name="Wall3" type="CSGBox3D" parent="HTerrain"]
+transform = Transform3D(-5.05798e-08, 0, 0.992546, 0, 0.992546, 0, -1.15713, 0, -4.33856e-08, 0.00244141, 29.8981, 255.859)
+use_collision = true
+size = Vector3(448.709, 74.4878, 1)
+
+[node name="Wall4" type="CSGBox3D" parent="HTerrain"]
+transform = Transform3D(-5.05798e-08, 0, 0.992546, 0, 0.992546, 0, -1.15713, 0, -4.33856e-08, 512.642, 29.898, 256.781)
+use_collision = true
+size = Vector3(448.709, 74.4878, 1)
