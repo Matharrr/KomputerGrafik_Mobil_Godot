@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dt50ddj34srkb"]
+[gd_scene load_steps=9 format=3 uid="uid://dt50ddj34srkb"]
 
 [ext_resource type="PackedScene" uid="uid://cx8gpcmg0vcmn" path="res://Scenes/Player.tscn" id="1_54fqk"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fcjlj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_kldks"]
 [ext_resource type="Texture2D" uid="uid://crepyyxwopxes" path="res://assets/Ground037_2K-JPG/Ground037_2K-JPG_Color.jpg" id="4_v0xrb"]
 [ext_resource type="Texture2D" uid="uid://bi5lgm6xqits1" path="res://assets/Ground037_2K-JPG/Ground037_2K-JPG_Roughness.jpg" id="5_gbe4g"]
+[ext_resource type="PackedScene" uid="uid://635y6ffbyvai" path="res://Scenes/pause_in_game.tscn" id="7_shy5k"]
 
 [sub_resource type="Resource" id="Resource_m0mh0"]
 script = ExtResource("3_kldks")
@@ -56,3 +57,7 @@ size = Vector3(448.709, 74.4878, 1)
 transform = Transform3D(-5.05798e-08, 0, 0.992546, 0, 0.992546, 0, -1.15713, 0, -4.33856e-08, 512.642, 29.898, 256.781)
 use_collision = true
 size = Vector3(448.709, 74.4878, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseInGame" parent="CanvasLayer" instance=ExtResource("7_shy5k")]
