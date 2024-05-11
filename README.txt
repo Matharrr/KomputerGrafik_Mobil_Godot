@@ -1,0 +1,1 @@
+run di scene "menu_world_add_on.tscn"

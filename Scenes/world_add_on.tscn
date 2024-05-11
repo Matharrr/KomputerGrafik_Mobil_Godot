@@ -61,3 +61,21 @@ size = Vector3(448.709, 74.4878, 1)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseInGame" parent="CanvasLayer" instance=ExtResource("7_shy5k")]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 244.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+text = "Tekan Esc/P untuk pause game."
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -244.0
+offset_bottom = 132.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Control:
+W/A/S/D move
+Space Rem"

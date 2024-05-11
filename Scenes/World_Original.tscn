@@ -89,7 +89,7 @@ transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 
 size = Vector3(1, 25, 1)
 
 [node name="Obstacle" type="CSGBox3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 0.897543, 0.440926, 0, -0.440926, 0.897543, 82.764, 9.031, 33.356)
+transform = Transform3D(1, 0, 0, 0, 0.897543, 0.440926, 0, -0.440926, 0.897543, 82.764, 9, 33.356)
 size = Vector3(20, 1, 54.4512)
 material = SubResource("StandardMaterial3D_hawoy")
 
@@ -99,7 +99,7 @@ size = Vector3(20, 1, 54.4512)
 material = SubResource("StandardMaterial3D_hawoy")
 
 [node name="Obstacle4" type="CSGBox3D" parent="Floor"]
-transform = Transform3D(-4.37114e-08, -0.441506, 0.897258, 0, 0.897258, 0.441506, -1, 1.92988e-08, -3.92204e-08, -50.1191, 9.03094, 67.3762)
+transform = Transform3D(-4.37114e-08, -0.441506, 0.897258, 0, 0.897258, 0.441506, -1, 1.92988e-08, -3.92204e-08, -50.119, 9, 67.376)
 size = Vector3(20, 1, 54.4512)
 material = SubResource("StandardMaterial3D_agxpe")
 
@@ -133,3 +133,21 @@ radius = 20.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseInGame" parent="CanvasLayer" instance=ExtResource("2_q4ths")]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 244.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+text = "Tekan Esc/P untuk pause game."
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -244.0
+offset_bottom = 132.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Control:
+W/A/S/D move
+Space Rem"
